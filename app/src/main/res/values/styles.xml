@@ -8,4 +8,15 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="MyOutlineButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeColor">@android:color/white</item>
+        <item name="android:textColor">@color/notFocused</item>
+    </style>
+
+    <style name="InputText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/notFocused</item>
+        <item name="hintTextColor">@color/notFocused</item>
+        <item name="android:textColorHint">@color/notFocused</item>
+    </style>
+
 </resources>

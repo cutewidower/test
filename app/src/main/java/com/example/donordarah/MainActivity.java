@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         animationDrawable.setExitFadeDuration(2000);
         animationDrawable.start();
 
-        final int loading =6000;
+        final int loading =3000;
         ProgressBar proses = (ProgressBar) findViewById(R.id.progressBar);
 
         ProgressBarAnimation mProgressAnimationTot = new ProgressBarAnimation(proses, loading);
