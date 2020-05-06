@@ -8,5 +8,8 @@
 
     <color name="tabPanel">#BD6D21</color>
 
+    <color name="primaryDarkLayer1">#D88432</color>
+    <color name="primaryDarkLayer2">#DD8937</color>
+    <color name="primaryDarkLayer3">#E39951</color>3
     <color app:override="true" name="mtrl_textinput_default_box_stroke_color">@color/notFocused</color>
 </resources>

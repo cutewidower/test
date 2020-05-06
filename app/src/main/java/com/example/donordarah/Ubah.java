@@ -12,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.donordarah.model.DataBaseHelper;
+
 import java.util.Calendar;
 
 public class Ubah extends AppCompatActivity {
@@ -77,7 +79,7 @@ public class Ubah extends AppCompatActivity {
                             text1.getText().toString() + "'");
 
                     Toast.makeText(getApplicationContext(), "Berhasil", Toast.LENGTH_LONG).show();
-                    ItemList.il.RefreshList();
+//                    ItemList.il.RefreshList();
                     finish();
                 }
             }

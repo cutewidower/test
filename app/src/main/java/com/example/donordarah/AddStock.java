@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.donordarah.model.DataBaseHelper;
+
 public class AddStock extends AppCompatActivity {
     protected Cursor cursor;
     DataBaseHelper dbHelper;

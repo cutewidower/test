@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/up"
+        android:id="@+id/add_event_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -28,7 +28,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         android:padding="30dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp">
@@ -42,7 +42,7 @@
                 android:id="@+id/lokasi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:textColor="@color/notFocused"
                 android:hint="lokasi"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -51,25 +51,31 @@
             android:layout_height="wrap_content"
             style="@style/InputText">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/date"
+                android:id="@+id/ruangan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textMultiLine"
+                android:gravity="top|start"
+                android:minLines="2"
                 android:textColor="@color/notFocused"
-                android:hint="tanggal"/>
+                android:hint="deskripsi"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
+            app:startIconDrawable="@drawable/ic_date_range_black_24dp"
+            app:startIconTint="@android:color/white"
+            android:layout_marginBottom="24dp"
             style="@style/InputText">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ruangan"
+                android:id="@+id/date"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:inputType="date"
                 android:textColor="@color/notFocused"
-                android:hint="ruangan"/>
+                android:hint="tanggal"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
     <ImageView
@@ -85,11 +91,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/simpan"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="54dp"
         android:text="Save"
         android:layout_marginTop="20dp"
         android:layout_alignBottom="@+id/event_frame_lay"
         android:layout_marginBottom="-24dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/notFocused"/>
 </RelativeLayout>

@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.donordarah.model.DataBaseHelper;
+
 public class LihatEvent extends AppCompatActivity {
 
     protected Cursor cursor;
