@@ -3,11 +3,8 @@ package com.example.donordarah.model;
 import android.content.Context;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.donordarah.R;
-
 import es.dmoral.toasty.Toasty;
 
 public abstract class BaseModel extends AppCompatActivity {
@@ -33,10 +30,6 @@ public abstract class BaseModel extends AppCompatActivity {
         Toasty.error(context, msg, Toasty.LENGTH_LONG, true).show();
     }
 
-    public int getIconDraw(int i){
-        return iconDrawable[i];
-    }
-
     private final int[] iconDrawable = {
             R.drawable.ic_calendar,
             R.drawable.ic_calendar_1,
@@ -47,11 +40,14 @@ public abstract class BaseModel extends AppCompatActivity {
             R.drawable.ic_calendar_6
     };
 
-    //    private final int[] iconDrawable = {
-    //            R.drawable.ic_drum,
-    //            R.drawable.ic_balloons,
-    //            R.drawable.ic_confetti,
-    //            R.drawable.ic_garland,
-    //            R.drawable.ic_circus
-    //    };
+/*
+      private final int[] iconDrawable = {
+            R.drawable.ic_drum,
+            R.drawable.ic_balloons,
+            R.drawable.ic_confetti,
+            R.drawable.ic_garland,
+            R.drawable.ic_circus
+       };
+ */
+
 }

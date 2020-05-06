@@ -136,6 +136,5 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         return dateFormat.format(date);
     }
 
-    private class Base extends BaseModel{}
-
+    private static class Base extends BaseModel{}
 }

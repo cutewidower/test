@@ -1,43 +1,33 @@
 package com.example.donordarah.adapter;
-
-import androidx.appcompat.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.donordarah.AddEvent;
-import com.example.donordarah.ItemList;
 import com.example.donordarah.LihatEvent;
 import com.example.donordarah.R;
-import com.example.donordarah.Ubah;
 import com.example.donordarah.model.BaseModel;
 import com.example.donordarah.model.DataBaseHelper;
 import com.example.donordarah.model.EventModel;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Locale;
-
-import es.dmoral.toasty.Toasty;
 
 public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> {
     private ArrayList<EventModel> list;
     private EventAdapter adapter;
     DataBaseHelper db;
 
-    public class Base extends BaseModel{
+    public class Base extends BaseModel {
     }
 
     public EventAdapter(ArrayList<EventModel> list) {
@@ -55,7 +45,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> 
     @Override
     public void onBindViewHolder(@NonNull final EventAdapter.viewHolder holder, final int position) {
         final EventModel model = list.get(position);
-        int icon = position;
+        int icon = model.getIcon();
         if (icon > 6) {
             icon %= 3;
             holder.image.setImageResource(iconDrawable[icon]);
@@ -101,7 +91,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> 
         }
     }
 
-    private void openDialog(final Context context, final int position){
+    private void openDialog(final Context context, final int position) {
         final String id = list.get(position).getId();
         final CharSequence[] dialogitem = {"View Event", "Edit", "Delete"};
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
@@ -110,19 +100,20 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> 
             public void onClick(DialogInterface dialog, int item) {
                 switch (item) {
                     case 0:
-                        Intent i = new Intent(context, LihatEvent.class);
-                        i.putExtra("nomor", id);
-                        context.startActivity(i);
-                    break;
+//                        Intent i = new Intent(context, LihatEvent.class);
+//                        i.putExtra("nomor", id);
+//                        context.startActivity(i);
+                        Base.toastWarning(context, "Soon...!");
+                        break;
                     case 1:
                         Intent in = new Intent(context, AddEvent.class);
                         in.putExtra("id", id);
                         context.startActivity(in);
-                    break;
+                        break;
                     case 2:
                         db = new DataBaseHelper(context);
                         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                        builder.setMessage("DELETE EVENT : "+list.get(position).getLocation()+" ?");
+                        builder.setMessage("DELETE EVENT : " + list.get(position).getLocation() + " ?");
                         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
@@ -139,7 +130,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> 
                         });
                         AlertDialog alertDialog = builder.create();
                         alertDialog.show();
-                    break;
+                        break;
                 }
             }
         });
@@ -155,5 +146,4 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.viewHolder> 
             R.drawable.ic_calendar_5,
             R.drawable.ic_calendar_6
     };
-
 }

@@ -42,7 +42,7 @@ public class AddEvent extends BaseModel {
             public void onClick(View v) {
                 hideSoftKeyboard();
                 new DatePickerDialog(AddEvent.this, dateListener, calendar
-                .get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+                        .get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
         dateListener = new DatePickerDialog.OnDateSetListener() {
@@ -55,13 +55,13 @@ public class AddEvent extends BaseModel {
             }
         };
 
-        ton1 =findViewById(R.id.simpan);
+        ton1 = findViewById(R.id.simpan);
         ton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
-                if(location.getText().toString().isEmpty()|| date.getText().toString().isEmpty()|| desc.getText().toString().isEmpty()){
+                if (location.getText().toString().isEmpty() || date.getText().toString().isEmpty() || desc.getText().toString().isEmpty()) {
                     toastWarning(getApplicationContext(), "Isi semua Field");
-                }else {
+                } else {
                     saveMode();
 
                 }
@@ -75,12 +75,12 @@ public class AddEvent extends BaseModel {
         String loc = location.getText().toString();
         Date date = calendar.getTime();
         String description = desc.getText().toString();
-        int ic = (int) (Math.random()*10)+1;
+        int ic = (int) (Math.random() * 10) + 1;
 
-        if (eventId.equals("add")){
+        if (eventId.equals("add")) {
             EventModel model = new EventModel("", ic, loc, date, description);
             db.addEvent(model);
-        }else {
+        } else {
             EventModel model = new EventModel("", ic, loc, date, description);
             db.updateEvent(eventId, model);
         }
@@ -90,7 +90,7 @@ public class AddEvent extends BaseModel {
     private void updateMode() {
         eventId = getIntent().getStringExtra("id");
         EventModel model;
-        if (eventId != null && !eventId.equals("add")){
+        if (eventId != null && !eventId.equals("add")) {
             tittle.setText("Edit Event");
             model = db.getEvent(eventId);
             calendar.setTime(model.getDate());

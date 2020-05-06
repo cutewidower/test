@@ -1,7 +1,5 @@
 package com.example.donordarah.model;
 
-import android.widget.ImageView;
-
 import java.util.Date;
 
 public class EventModel {
@@ -11,8 +9,7 @@ public class EventModel {
     private Date date;
     private String description;
 
-    public EventModel() {
-    }
+    public EventModel() {}
 
     public EventModel(String id, int icon, String location, Date date, String description) {
         this.id = id;
