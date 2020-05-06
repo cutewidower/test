@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F17D09"
+    tools:context=".ItemList">
+
+    <RelativeLayout
+        android:id="@+id/rel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F0A305"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp">
+
+        <TextView
+            android:id="@+id/dashboard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jadwal Donor Darah"
+            android:layout_marginStart="5dp"
+            android:textSize="28dp"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dashboard"
+            android:layout_marginStart="5dp"
+            android:text="Mobil Keliling PMI"
+            android:textSize="20dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_transfusion"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:background="#F0A305"
+        android:layout_below="@+id/rel"
+        android:layout_above="@+id/stok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        />
+<Button
+    android:layout_alignParentBottom="true"
+    android:id="@+id/stok"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="stock"
+    android:layout_marginBottom="50dp"
+    android:layout_marginStart="20dp"
+    />
+    <Button
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tambah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="tambah"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="20dp"
+        />
+</RelativeLayout>
