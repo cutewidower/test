@@ -88,9 +88,9 @@ public class AddEvent extends BaseModel {
     }
 
     private void updateMode() {
-        eventId = getIntent().getStringExtra("id");
         EventModel model;
-        if (eventId != null && !eventId.equals("add")) {
+        if (getIntent().getStringExtra("id") != null && !eventId.equals("add")) {
+            eventId = getIntent().getStringExtra("id");
             tittle.setText("Edit Event");
             model = db.getEvent(eventId);
             calendar.setTime(model.getDate());
